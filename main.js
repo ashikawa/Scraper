@@ -16,7 +16,13 @@
 
             console.log('# url:', url);
 
-            scraper(url, function (err, $) {
+            scraper({
+                'uri': url,
+                // 'auth': {
+                //     'user': 'xxxxx',
+                //     'password': 'xxxxx'
+                // }
+            }, function (err, $) {
                 if (err) { throw err; }
 
                 $('[onclick]').each(function (i, element) {
